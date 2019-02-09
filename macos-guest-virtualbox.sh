@@ -18,7 +18,7 @@ resolution="1920x1080"       # VM display resolution
 serialnumber="C02LJ6QSFD56" # valid serial required for iCloud, iMessage.
 # Structure:  PPPYWWUUUMMM - Plant, Year, Week, Unique identifier, Model
 # Whether the serial is valid depends on the device name and board, below:
-devicename="MacBookPro12,1" # personalize to match serial if desired
+devicename="MacBookPro11,2" # personalize to match serial if desired
 boardid="Mac-2BD1B31983FE1663"
 
 # welcome message
