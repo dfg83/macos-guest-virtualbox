@@ -10,15 +10,15 @@
 
 # Customize the installation by setting these variables:
 vmname="Mojave"             # name of the VirtualBox virtual machine
-storagesize=22000           # VM disk image size in MB. minimum 22000
+storagesize=1000000           # VM disk image size in MB. minimum 22000
 cpucount=2                  # VM CPU cores, minimum 2
 memorysize=4096             # VM RAM in MB, minimum 2048 
 gpuvram=128                 # VM video RAM in MB, minimum 34, maximum 128
-resolution="1280x800"       # VM display resolution
-serialnumber="NOTAVALIDSN0" # valid serial required for iCloud, iMessage.
+resolution="1920x1080"       # VM display resolution
+serialnumber="C02LJ6QSFD56" # valid serial required for iCloud, iMessage.
 # Structure:  PPPYWWUUUMMM - Plant, Year, Week, Unique identifier, Model
 # Whether the serial is valid depends on the device name and board, below:
-devicename="MacBookPro11,3" # personalize to match serial if desired
+devicename="MacBookPro12,1" # personalize to match serial if desired
 boardid="Mac-2BD1B31983FE1663"
 
 # welcome message
