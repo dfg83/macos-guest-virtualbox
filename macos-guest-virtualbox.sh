@@ -2,7 +2,7 @@
 # One-key semi-automatic installer of macOS on VirtualBox
 # (c) img2tab, licensed under GPL2.0 or higher
 # url: https://github.com/img2tab/macos-guest-virtualbox
-# version 0.37
+# version 0.38
 
 # Requirements: 33.5GB available storage on host
 # Dependencies: bash>=4.0, unzip, wget, dmg2img,
@@ -10,7 +10,7 @@
 
 # Customize the installation by setting these variables:
 vmname="Mojave"             # name of the VirtualBox virtual machine
-storagesize=1000000           # VM disk image size in MB. minimum 22000
+storagesize=922000           # VM disk image size in MB. minimum 22000
 cpucount=2                  # VM CPU cores, minimum 2
 memorysize=4096             # VM RAM in MB, minimum 2048 
 gpuvram=128                 # VM video RAM in MB, minimum 34, maximum 128
@@ -154,12 +154,14 @@ if [ -r "BaseSystem.vdi" ]; then
     echo "BaseSystem.vdi bootstrap virtual disk image ready."
 else
     echo "Downloading BaseSystem.dmg from swcdn.apple.com"
-    wget -c 'http://swcdn.apple.com/content/downloads/22/46/041-31308/r39g613fmms2li42if9r120zwn2bn7rnhn/BaseSystem.dmg' -O "BaseSystem.dmg" 2>/dev/tty
+    wget -c 'http://swcdn.apple.com/content/downloads/34/52/041-38914/dhgsi49xaudtqpbj3zibbmjy3ry9ola2rb/BaseSystem.dmg' -O "BaseSystem.dmg" 2>/dev/tty
     if [ ! -s BaseSystem.dmg ]; then
         printf ${whiteonred}'Could not download BaseSystem.dmg'${defaultcolor}'. Please report this issue
 on https://github.com/img2tab/macos-guest-virtualbox/issues
 or update the URL yourself from the catalog found
-on https://gist.github.com/nuomi1/16133b89c2b38b7eb197'
+on https://gist.github.com/nuomi1/16133b89c2b38b7eb197
+or http://swscan.apple.com/content/catalogs/others/
+   index-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog'
         exit
     fi
     echo "Downloaded BaseSystem.dmg. Converting to BaseSystem.img"
@@ -444,7 +446,7 @@ echo ""
 echo "Downloading macOS Mojave 10.14.3 installer."
 
 # downloading macOS
-kbstring='urlpath="http://swcdn.apple.com/content/downloads/22/46/041-31308/r39g613fmms2li42if9r120zwn2bn7rnhn/"; for filename in BaseSystem.chunklist InstallInfo.plist AppleDiagnostics.dmg AppleDiagnostics.chunklist BaseSystem.dmg InstallESDDmg.pkg; do curl "${urlpath}${filename}" -o "/Volumes/'"${vmname}"'/${filename}"; done'
+kbstring='urlpath="http://swcdn.apple.com/content/downloads/34/52/041-38914/dhgsi49xaudtqpbj3zibbmjy3ry9ola2rb/"; for filename in BaseSystem.chunklist InstallInfo.plist AppleDiagnostics.dmg AppleDiagnostics.chunklist BaseSystem.dmg InstallESDDmg.pkg; do curl "${urlpath}${filename}" -o "/Volumes/'"${vmname}"'/${filename}"; done'
 sendkeys
 promptterminalready
 echo ""
@@ -617,8 +619,10 @@ fi
 
 printf 'macOS Mojave 10.14.3 installation should complete in a few minutes.
 
-After the installation is complete, you may wish to expand the virtual disk
-image size through VirtualBox, and then expand the macOS system partition
-through Disk Utility in the virtual machine itself.
+After the installation is complete, the virtual disk image may be increased
+through VirtualBox, then the macOS system APFS container size may be
+increased through Disk Utility inside the virtual machine by creating a new
+APFS container and subsequently deleting it, allowing the system APFS container
+to take up the available space.
 
 That'\''s it. Enjoy your virtual machine.'
