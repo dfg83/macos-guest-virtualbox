@@ -16,6 +16,7 @@ The script assigns the minimum required storage size for the installation. After
 
 ## Dependencies
 
+* chmod +x macos-guest-virtualbox.sh
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)≥5.2 with Extension Pack
 * `Bash`≥4 (run on Windows through [Cygwin](https://cygwin.com/install.html))
 * `unzip`, `wget` (install through package manager)
