@@ -10,6 +10,19 @@
 
 function set_variables() {
 # Customize the installation by setting these variables:
+<<<<<<< HEAD
+vmname="Mojave"             # name of the VirtualBox virtual machine
+storagesize=922000           # VM disk image size in MB. minimum 22000
+cpucount=2                  # VM CPU cores, minimum 2
+memorysize=4096             # VM RAM in MB, minimum 2048 
+gpuvram=128                 # VM video RAM in MB, minimum 34, maximum 128
+resolution="1920x1080"       # VM display resolution
+serialnumber="C02LJ6QSFD56" # valid serial required for iCloud, iMessage.
+# Structure:  PPPYWWUUUMMM - Plant, Year, Week, Unique identifier, Model
+# Whether the serial is valid depends on the device name and board, below:
+devicename="MacBookPro11,2" # personalize to match serial if desired
+boardid="Mac-2BD1B31983FE1663"
+=======
 vmname="macOS"                   # name of the VirtualBox virtual machine
 storagesize=22000                # VM disk image size in MB. minimum 22000
 cpucount=2                       # VM CPU cores, minimum 2
@@ -71,6 +84,7 @@ else
         exit
     fi
 fi
+>>>>>>> ab6d514d47e3654ff5e080a63e6355f8f0ea54b3
 
 white_on_red="\e[48;2;255;0;0m\e[38;2;255;255;255m"
 white_on_black="\e[48;2;0;0;9m\e[38;2;255;255;255m"
