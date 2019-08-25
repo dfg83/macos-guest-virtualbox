@@ -28,3 +28,9 @@ Developing and maintaining VirtualBox or macOS features is beyond the scope of t
 * `unzip` (install through package manager)
 * `wget` (install through package manager)
 * `dmg2img` (install through package manager on Linux, macOS, or WSL; let the script download it automatically on Cygwin)
+* chmod +x macos-guest-virtualbox.sh
+
+
+## Error
+* Syntaxfehler beim unerwarteten Wort `$'{\r''
+** To write your file in this way, while you have the file open, go to the Edit menu, select the "EOL Conversion" submenu, and from the options that come up select "UNIX/OSX Format". The next time you save the file, its line endings will, all going well, be saved with UNIX-style line endings.
