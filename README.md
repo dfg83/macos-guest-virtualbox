@@ -28,3 +28,4 @@ Developing and maintaining VirtualBox or macOS features is beyond the scope of t
 * `unzip` (install through package manager)
 * `wget` (install through package manager)
 * `dmg2img` (install through package manager on Linux, macOS, or WSL; let the script download it automatically on Cygwin)
+* chmod +x macos-guest-virtualbox.sh
